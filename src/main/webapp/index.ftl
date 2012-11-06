@@ -24,7 +24,12 @@
   </head>
 
   <body>
-  	<div id="bodyPage">
-  	</div>
+  	<div id="bodyPage"></div>
+  	
+  	<script type="text/javascript">
+		$(function(){
+			brite.display("MainScreen",$("#bodyPage"));
+		});
+	</script>
   </body>
 </html>

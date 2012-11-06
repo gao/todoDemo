@@ -46,7 +46,7 @@ public class TodoConfig extends AbstractModule {
     public Class[] provideEntityClasses() {
         Set<Class<?>> entitySet;
         try {
-            entitySet = new ClassesInPackageScanner().findAnnotatedClasses("com.todo.entity", javax.persistence.Entity.class);
+            entitySet = new ClassesInPackageScanner().findAnnotatedClasses("com.tododemo.entity", javax.persistence.Entity.class);
             Class[] entityClasses = new Class[entitySet.size()];
             entitySet.toArray(entityClasses);
             return entityClasses;
