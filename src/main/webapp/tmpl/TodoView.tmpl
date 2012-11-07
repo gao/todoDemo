@@ -1,5 +1,35 @@
 <script id="tmpl-TodoView" type="text/html">
 	<div class="TodoView">
-		Add Todo Demo
+		<header>
+          <h2>Todo Demo</h2>
+        </header>
+        
+        <section class="content">      
+        	{{for #data tmpl="#tmpl-TodoView-todoList" /}}
+        </section>
 	</div>  
+</script>
+
+<script id="tmpl-TodoView-todoList" type="text/html">
+	<table class="table">
+    	<tbody>
+     		{{for todos}}
+      		<tr data-entity="Todo" data-entity-id="{{:id}}" {{if done}}class="done"{{/if}}>
+        		<td class="check">
+        			<input data-prop="done" type="checkbox" {{if done}}checked="checked"{{/if}}/> 
+        		</td>
+        		<td class="title">
+        			<span {{if done}}class="done-true"{{/if}}>{{:name}}</span>
+        		</td>
+      		</tr>
+      		{{/for}}
+      
+      		<tr class="newTodo">
+        		<td class="check"></td>
+        		<td class="title">
+          			<input data-prop="title" placeholder="Enter new todo" type="input" />
+        		</td>
+      		</tr>
+    	</tbody>
+	</table>
 </script>

@@ -1,8 +1,69 @@
 .TodoView{
-	
+
+}
+
+.TodoView header{
+  position: relative;
+  padding: 0;
+  height: 35px;
+  background-image: -moz-linear-gradient(bottom, #afafaf 0%, #fff 100%);
+  background-image: -o-linear-gradient(bottom, #afafaf 0%, #fff 100%);
+  background-image: -webkit-linear-gradient(bottom, #afafaf 0%, #fff 100%);
+  background-image: linear-gradient(bottom, #afafaf 0%, #fff 100%);
+  -moz-border-radius: 10px 10px 0px 0px;
+  -webkit-border-radius: 10px 10px 0px 0px;
+  border-radius: 10px 10px 0px 0px;  
+}
+
+.TodoView header h2{
+  color: #666;
+  letter-spacing: .2em;
+  text-shadow: #fff 0px 1px 0;
+  line-height: normal;
+  font-weight: bold;
+  margin: 0;
+  padding: 7px 0 0 0;
+  font-size: 18px;
+  text-align: center;
+}
+
+.TodoView .table{
+  margin: 0;
+}
+
+.TodoView section.content{
+  top: 70px; right: 0px; bottom: 0px; left: 0; 
+  overflow: auto;
+}
+
+.TodoView section.content td.check{
+  width: 15px;
+}
+
+.TodoView td.title{
+  position: relative;
+}
+
+.TodoView tr input[data-prop="title"]{
+  border: none;
+  display: block;
+  border: none;
+  width: 80%;  
+  background: none;
+}
+
+.TodoView tr.done{
+  background: #ddffdd;
 }
 
 .TodoView .done-true {
   text-decoration: line-through;
   color: grey;
 }
+
+.TodoView  .helper{
+  display: block;
+  font-size: 11px;
+  color: #777;
+}
+

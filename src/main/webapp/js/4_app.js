@@ -4,7 +4,6 @@ var app = app || {};
 	//Remote URL
 	app.remoteServiceURL = "http://localhost:8080/todo";
 	
-	// if mode is 'SQLite' use SQLiteDao,
 	// if mode is 'Remote' use remote dao
 	// else use memory dao
 	app.dataMode = 'Remote';
