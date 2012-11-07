@@ -4,6 +4,14 @@
           <h2>Todo Demo</h2>
         </header>
         
+        <section class="heading">
+        	<label> 
+          		<span class="remaining">{{:remaining}}</span> of <span class="total">{{:todos.length}}</span> remaining
+          		[ <a class="archive" href="#">archive</a> ]
+          	</label>
+          
+        </section>
+        
         <section class="content">      
         	{{for #data tmpl="#tmpl-TodoView-todoList" /}}
         </section>
