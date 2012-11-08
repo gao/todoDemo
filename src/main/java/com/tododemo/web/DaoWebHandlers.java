@@ -22,9 +22,6 @@ import com.google.inject.Singleton;
 @SuppressWarnings({ "rawtypes", "unchecked" })
 public class DaoWebHandlers {
 
-//    @Inject
-//    private ValidatorManager validatorManager;
-
     private DaoRegistry      daoRegistry;
 
     @Inject
