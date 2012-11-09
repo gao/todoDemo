@@ -9,3 +9,11 @@
      -moz-border-radius: @radius;
           border-radius: @radius;
 }
+
+// Border Radius
+.background-image(@placeHolder,@startColor, @startColorPer, @endColor, @endColorPer) {
+	background-image: -moz-linear-gradient(@placeHolder, @startColor @startColorPer, @endColor @endColorPer);
+  	background-image: -o-linear-gradient(@placeHolder, @startColor @startColorPer, @endColor @endColorPer);
+ 	background-image: -webkit-linear-gradient(@placeHolder, @startColor @startColorPer, @endColor @endColorPer);
+  	background-image: linear-gradient(@placeHolder, @startColor @startColorPer, @endColor @endColorPer);
+}
