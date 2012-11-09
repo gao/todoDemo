@@ -14,18 +14,20 @@
 		
 		postDisplay: function(){
 			var view = this;
-		 	
-		 	view.$remaining = view.$el.find("section.heading .remaining");
-		 	view.$total = view.$el.find("section.heading .total");
-		 	view.$sectionContent = view.$el.find("section.content"); 	
+		 	var $e = view.$el;
+		 	view.$remaining = $e.find("section.heading .remaining");
+		 	view.$total = $e.find("section.heading .total");
+		 	view.$sectionContent = $e.find("section.content"); 	
 		},
 		
 		events: {
+			//event for click checkbox
 			"change; input[data-prop='done']" : clickDoneCheckbox,
 			
+			//event for click archive
 			"click; a.archive" : clickArchive,
 			
-			// Handle the create new task
+			// event for create new Todo
 			"focus; .newTodo input[data-prop='title']": startTodoCreate,
 			"blur; .newTodo input[data-prop='title']": endTodoCreate
 		},
@@ -37,7 +39,6 @@
 	});
 	
 	// --------- Event Methods --------- //
-	
 	function clickDoneCheckbox(event){
 		var $check = $(event.currentTarget);
 		var todoId = $check.bEntity("Todo").id;
@@ -87,18 +88,6 @@
 		$input.val("");
 		$input.parent().find(".helper").remove();
 	}
-	
-	function refreshPage(){
-		var view = this;
-		
-		return app.TodoDao.list().done(function(todoList){
-			view.$remaining.html(countRemailing(todoList));
-			view.$total.html(todoList.length);
-				
-			var todoHtml = $("#tmpl-TodoView-todoList").render({todos:todoList});
-			view.$sectionContent.html(todoHtml);			
-		});
-	}
 	// --------- /Event Methods --------- //
 	
 	// --------- Private Methods --------- //
@@ -111,6 +100,18 @@
 			}
 		}
 		return remaining;
+	}
+	
+	function refreshPage(){
+		var view = this;
+		
+		return app.TodoDao.list().done(function(todoList){
+			view.$remaining.html(countRemailing(todoList));
+			view.$total.html(todoList.length);
+				
+			var todoHtml = $("#tmpl-TodoView-todoList").render({todos:todoList});
+			view.$sectionContent.html(todoHtml);			
+		});
 	}
 	// --------- /Private Methods --------- //
 	

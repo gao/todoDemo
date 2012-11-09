@@ -1,12 +1,9 @@
-
 // --------- Remote Dao --------- //
 (function($) {
 
 	function RemoteDao(entityType) {
         this._entityType = entityType;
 	}
-
-
 
 	// ------ DAO Interface Implementation ------ //
 	RemoteDao.prototype.getIdName = function() {
@@ -18,7 +15,6 @@
         return this._entityType;
     };
     // --------- DAO Info Methods --------- //
-
 
 	RemoteDao.prototype.get = function(id) {
 		var objectType = this._entityType;
@@ -37,7 +33,6 @@
 		}).pipe(function(val) {
 			return val.result;
 		});
-
 	}
 
 	/**
@@ -72,14 +67,9 @@
 				if(opts.withResultCount) {
 					return val;
 				}
-				//				no client side sort, only server
-				//				if (opts.orderBy) {
-				//					resultSet = brite.util.array.sortBy(resultSet, opts.orderBy)
-				//				}
 			}
 			return resultSet;
 		});
-
 	}
 
 	// to reuse update
@@ -96,10 +86,6 @@
 			data : reqData,
 			dataType : "json"
 		}).pipe(function(val) {
-			// if(val.result.type == "appValidationError") {
-				// return $.Deferred().reject(val.result.failedProps).promise();
-			// }
- 			// return val.result;
  			return val;
 		});
 
@@ -123,13 +109,8 @@
 			data : reqData,
 			dataType : "json"
 		}).pipe(function(val) {
-			// if(val.result.type == "appValidationError") {
-				// return $.Deferred().reject(val.result.failedProps).promise();
-			// }
-			// return val.result;
 			return val;
 		});
-
 	}
 
 
